@@ -91,7 +91,7 @@ const Manager = () => {
   };
 
   const deleteform = async (id) => {
-    await fetch(`https://passop-backend-la9l.onrender.com//${id}`, {
+    await fetch(`https://passop-backend-la9l.onrender.com/${id}`, {
       method: "DELETE",
     });
 
