@@ -26,7 +26,7 @@ const Manager = () => {
   };
 
   const getPasswords = async () => {
-    let req = await fetch("http://localhost:10000/");
+    let req = await fetch("https://passop-backend-la9l.onrender.com/");
     let data = await req.json();
     setPasswords(data);
   };
@@ -48,7 +48,7 @@ const Manager = () => {
 
     if (editId) {
       // update existing password
-      await fetch(`http://localhost:3000/${editId}`, {
+      await fetch(`https://passop-backend-la9l.onrender.com/${editId}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -61,7 +61,7 @@ const Manager = () => {
       setEditId(null);
     } else {
       // add new password
-      await fetch("http://localhost:10000/", {
+      await fetch("https://passop-backend-la9l.onrender.com/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -91,7 +91,7 @@ const Manager = () => {
   };
 
   const deleteform = async (id) => {
-    await fetch(`http://localhost:10000/${id}`, {
+    await fetch(`https://passop-backend-la9l.onrender.com//${id}`, {
       method: "DELETE",
     });
 
