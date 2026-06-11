@@ -7,12 +7,12 @@ const { MongoClient } = require("mongodb");
 const bodyParser = require("body-parser");
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 
 // Connection URL
-const url = "mongodb://localhost:27017";
+const url = process.env.MONGO_URI;
 const client = new MongoClient(url);
 
 // Database name
@@ -53,7 +53,6 @@ async function startServer() {
         res.status(500).send(err);
       }
     });
-    const { ObjectId } = require("mongodb");
 
     app.put("/:id", async (req, res) => {
       try {
