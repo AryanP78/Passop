@@ -26,7 +26,7 @@ const Manager = () => {
   };
 
   const getPasswords = async () => {
-    let req = await fetch("http://localhost:3000/");
+    let req = await fetch("http://localhost:10000/");
     let data = await req.json();
     setPasswords(data);
   };
@@ -61,7 +61,7 @@ const Manager = () => {
       setEditId(null);
     } else {
       // add new password
-      await fetch("http://localhost:3000/", {
+      await fetch("http://localhost:10000/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -91,7 +91,7 @@ const Manager = () => {
   };
 
   const deleteform = async (id) => {
-    await fetch(`http://localhost:3000/${id}`, {
+    await fetch(`http://localhost:10000/${id}`, {
       method: "DELETE",
     });
 
