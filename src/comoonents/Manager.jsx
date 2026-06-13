@@ -4,6 +4,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 const Manager = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const [visiblePasswordId, setVisiblePasswordId] = useState(null);
   const [form, setForm] = useState({
     site: "",
     username: "",
@@ -219,15 +220,27 @@ const Manager = () => {
                           <i className="fa-solid fa-copy"></i>
                         </span>
                       </td>
-
                       <td className="group py-2 text-center w-64 border border-white">
-                        {item.password}
+                        {visiblePasswordId === item._id
+                          ? item.password
+                          : "••••••••"}
 
                         <span
                           className="pl-2 cursor-pointer opacity-0 group-hover:opacity-100 transition-opacity duration-200"
                           onClick={() => copyText(item.password)}
                         >
                           <i className="fa-solid fa-copy"></i>
+                        </span>
+
+                        <span
+                          className="pl-3 cursor-pointer"
+                          onClick={() =>
+                            setVisiblePasswordId(
+                              visiblePasswordId === item._id ? null : item._id,
+                            )
+                          }
+                        >
+                          {visiblePasswordId === item._id ? "🙈" : "👁️"}
                         </span>
                       </td>
 
