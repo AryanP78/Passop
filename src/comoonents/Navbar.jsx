@@ -2,20 +2,23 @@ import React from "react";
 
 const Navbar = () => {
   return (
-    <div className="h-13 bg-slate-800">
-      <nav>
-        <ul className=" flex flex-1 gap-10 ml-10 p-3 text-white">
-          <div className="logo  font-bold text-2xl">
-            <span className="text-green-700"> &lt; </span>
+    <div className="bg-slate-800 text-white">
+      <nav className="max-w-7xl mx-auto px-4 py-3">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+          {/* Logo */}
+          <div className="font-bold text-2xl text-center md:text-left">
+            <span className="text-green-700">&lt;</span>
             Pass
-            <span className="text-green-700">OP/&gt; </span>
+            <span className="text-green-700">OP/&gt;</span>
           </div>
-          <div className="flex flex-1 gap-7  ml-260 ">
-            <li className="hover:font-bold">Home</li>
-            <li className="hover:font-bold">About us</li>
-            <li className="hover:font-bold">Contact us</li>
-          </div>
-        </ul>
+
+          {/* Navigation Links */}
+          <ul className="flex flex-col md:flex-row items-center gap-4 md:gap-8">
+            <li className="cursor-pointer hover:font-bold">Home</li>
+            <li className="cursor-pointer hover:font-bold">About Us</li>
+            <li className="cursor-pointer hover:font-bold">Contact Us</li>
+          </ul>
+        </div>
       </nav>
     </div>
   );
